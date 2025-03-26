@@ -18,11 +18,11 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "g_arrCaseID&Sequence_83",
-        "g_Config&Sequence_83",
-        "g_swProcessingTimer&Sequence_83",
-        "g_TransactionItem&Sequence_83",
-        "g_intExitPoint&Sequence_83",
+        "g_arrCaseID&Sequence_85",
+        "g_Config&Sequence_85",
+        "g_swProcessingTimer&Sequence_85",
+        "g_TransactionItem&Sequence_85",
+        "g_intExitPoint&Sequence_85",
         "SystemException&StateMachine_1",
         "BusinessException&StateMachine_1",
         "TransactionNumber&StateMachine_1",
@@ -111,6 +111,11 @@
       "Path": "Process/Process Transaction.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "g_arrCaseID&Sequence_85",
+        "g_Config&Sequence_85",
+        "g_swProcessingTimer&Sequence_85",
+        "g_TransactionItem&Sequence_85",
+        "g_intExitPoint&Sequence_85",
         "intAnimalIDCount&Sequence_18",
         "strRobotNotes&Sequence_7",
         "intAnimalIDCount&Sequence_15",
@@ -123,12 +128,7 @@
         "strSheet&Flowchart_1",
         "strFormCSVFilepath&Flowchart_1",
         "dtFormData&Flowchart_1",
-        "strDownloadURL&Flowchart_1",
-        "g_arrCaseID&Sequence_83",
-        "g_Config&Sequence_83",
-        "g_swProcessingTimer&Sequence_83",
-        "g_TransactionItem&Sequence_83",
-        "g_intExitPoint&Sequence_83"
+        "strDownloadURL&Flowchart_1"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
@@ -156,6 +156,32 @@
         "in_OrchestratorFolders",
         "out_Credentials",
         "in_RetrieveCredentials"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/SetTransactionStatus.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&Sequence_85",
+        "g_Config&Sequence_85",
+        "g_swProcessingTimer&Sequence_85",
+        "g_TransactionItem&Sequence_85",
+        "g_intExitPoint&Sequence_85",
+        "strLogNote&Flowchart_2",
+        "QueueRetry&Sequence_17",
+        "ScreenshotPath&Sequence_17",
+        "strLogNote&Sequence_31"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_BusinessException",
+        "in_dateCaseStartTime",
+        "in_strWorkLogFilepath",
+        "in_SystemException",
+        "io_intConSysEx",
+        "io_RetryNumber",
+        "io_TransactionNumber"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
