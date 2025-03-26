@@ -337,10 +337,7 @@
                         </sap:WorkflowViewStateService.ViewState>
                       </Assign>
                       <FlowStep.Next>
-                        <FlowDecision x:Name="__ReferenceID12" DisplayName="English Registration?" sap:VirtualizedContainerService.HintSize="116,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
-                          <FlowDecision.Condition>
-                            <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="dtFormData.Rows(0)(4).ToString.ToLower.Trim = &quot;england&quot;" />
-                          </FlowDecision.Condition>
+                        <FlowDecision x:Name="__ReferenceID12" Condition="[dtFormData.Rows(0)(4).ToString.ToLower.Trim = &quot;england&quot;]" DisplayName="English Registration?" sap:VirtualizedContainerService.HintSize="116,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -478,10 +475,7 @@
                           </sap:WorkflowViewStateService.ViewState>
                         </Assign>
                         <FlowStep.Next>
-                          <FlowDecision x:Name="__ReferenceID1" DisplayName="English Registration?" sap:VirtualizedContainerService.HintSize="116,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
-                            <FlowDecision.Condition>
-                              <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="dtFormData.Rows(0)(3).ToString.ToLower.Trim = &quot;england&quot;" />
-                            </FlowDecision.Condition>
+                          <FlowDecision x:Name="__ReferenceID1" Condition="[dtFormData.Rows(0)(3).ToString.ToLower.Trim = &quot;england&quot;]" DisplayName="English Registration?" sap:VirtualizedContainerService.HintSize="116,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -500,7 +494,7 @@
                                     <av:PointCollection x:Key="ConnectorLocation">690,1151.5 690,1192.5 380,1192.5 380,1335.5</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Sequence DisplayName="Concatenate Animal IDs &amp; Validate Data" sap:VirtualizedContainerService.HintSize="748,6140" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                <Sequence DisplayName="Concatenate Animal IDs &amp; Validate Data" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="x:Int32" Name="intCattleColumnCount" />
                                     <Variable x:TypeArguments="x:Int32" Name="intSheepColumnCount" />
@@ -719,9 +713,9 @@
                                       </Catch>
                                     </TryCatch.Catches>
                                   </TryCatch>
-                                  <If Condition="[intSheepColumnCount  &gt;  1]" DisplayName="More than one Sheep Animal ID column?" sap:VirtualizedContainerService.HintSize="686,1427" sap2010:WorkflowViewState.IdRef="If_4">
+                                  <If Condition="[intSheepColumnCount  &gt;  1]" DisplayName="More than one Sheep Animal ID column?" sap:VirtualizedContainerService.HintSize="686,1429" sap2010:WorkflowViewState.IdRef="If_4">
                                     <If.Then>
-                                      <Sequence sap:VirtualizedContainerService.HintSize="652,1244" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                      <Sequence sap:VirtualizedContainerService.HintSize="652,1246" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="x:Int32" Name="intLoopCounter" />
                                         </Sequence.Variables>
@@ -738,28 +732,28 @@
                                             <InArgument x:TypeArguments="x:Int32">2</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[intLoopCounter &lt;= intSheepColumnCount]" DisplayName="Do While - Concatenate Animal ID Columns" sap:VirtualizedContainerService.HintSize="610,1033" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
+                                        <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[intLoopCounter &lt;= intSheepColumnCount]" DisplayName="Do While - Concatenate Animal ID Columns" sap:VirtualizedContainerService.HintSize="610,1035" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
                                           <ui:InterruptibleDoWhile.Body>
-                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="576,896" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="576,898" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <TryCatch sap2010:Annotation.AnnotationText="Try Catch for same reason as Cattle" DisplayName="Try Catch - Excel Errors" sap:VirtualizedContainerService.HintSize="534,808" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                                              <TryCatch sap2010:Annotation.AnnotationText="Try Catch for same reason as Cattle" DisplayName="Try Catch - Excel Errors" sap:VirtualizedContainerService.HintSize="534,810" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <TryCatch.Try>
-                                                  <Sequence DisplayName="Concatenate Animal IDs" sap:VirtualizedContainerService.HintSize="496,544" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                                  <Sequence DisplayName="Concatenate Animal IDs" sap:VirtualizedContainerService.HintSize="496,546" sap2010:WorkflowViewState.IdRef="Sequence_27">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <Assign DisplayName="Concatenate Animal ID Columns" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_38">
+                                                    <Assign DisplayName="Concatenate Animal ID Columns" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_38">
                                                       <Assign.To>
                                                         <OutArgument x:TypeArguments="x:Object">[dtFormData.Rows(0).Item("If you are reporting the vaccination of any sheep, confirm the official unique identifiers of all the sheep that you have vaccinated - Answer 1")]</OutArgument>
                                                       </Assign.To>
@@ -768,7 +762,7 @@
                                                       </Assign.Value>
                                                     </Assign>
                                                     <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="[&quot;If you are reporting the vaccination of any sheep, confirm the official unique identifiers of all the sheep that you have vaccinated - Answer &quot;+intLoopCounter.ToString]" DataTable="[dtFormData]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_5" />
-                                                    <Assign DisplayName="Increment Loop Counter" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_39">
+                                                    <Assign DisplayName="Increment Loop Counter" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_39">
                                                       <Assign.To>
                                                         <OutArgument x:TypeArguments="x:Int32">[intLoopCounter]</OutArgument>
                                                       </Assign.To>
@@ -844,86 +838,126 @@
                                       </If.Else>
                                     </If>
                                   </Sequence>
-                                  <Sequence DisplayName="Validate Number of Cattle Animal IDs" sap:VirtualizedContainerService.HintSize="686,588" sap2010:WorkflowViewState.IdRef="Sequence_15">
-                                    <Sequence.Variables>
-                                      <Variable x:TypeArguments="x:Int32" Name="intAnimalIDCount" />
-                                    </Sequence.Variables>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <Assign DisplayName="Assign intAnimalIDCount" sap:VirtualizedContainerService.HintSize="510,83" sap2010:WorkflowViewState.IdRef="Assign_23">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="x:Int32">[intAnimalIDCount]</OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="x:Int32" xml:space="preserve">[Regex.Matches(dtFormData.Rows(0).Item("If you are reporting the vaccination of any cattle, confirm the official identifiers of all the cattle that you have vaccinated.  - Answer 1").ToString.ToLower, "uk[0-9\s]*?(?=uk|$)", RegexOptions.Multiline).Count]</InArgument>
-                                      </Assign.Value>
-                                    </Assign>
-                                    <If Condition="[intAnimalIDCount &lt;&gt; Cint(dtFormData.Rows(0).Item(&quot;Confirm the number of cattle you are reporting as vaccinated on this form&quot;))]" DisplayName="Count Mismatch?" sap:VirtualizedContainerService.HintSize="510,354" sap2010:WorkflowViewState.IdRef="If_5">
-                                      <If.Then>
-                                        <Sequence sap:VirtualizedContainerService.HintSize="476,171" sap2010:WorkflowViewState.IdRef="Sequence_16">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <Assign DisplayName="Assign strRobotNotes" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_24">
-                                            <Assign.To>
-                                              <OutArgument x:TypeArguments="x:String">[strRobotNotes]</OutArgument>
-                                            </Assign.To>
-                                            <Assign.Value>
-                                              <InArgument x:TypeArguments="x:String">["Valid Cattle Animal ID Mismatch. Either Animal IDs are missing or they are not in the UKXXXXXXXXXXXX format. Number of IDs reported: "+dtFormData.Rows(0).Item("Confirm the number of cattle you are reporting as vaccinated on this form").ToString+". Number detected: "+intAnimalIDCount.ToString+Environment.NewLine]</InArgument>
-                                            </Assign.Value>
-                                          </Assign>
-                                        </Sequence>
-                                      </If.Then>
-                                      <If.Else>
-                                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_17" />
-                                      </If.Else>
-                                    </If>
-                                  </Sequence>
-                                  <Sequence DisplayName="Validate Number of Sheep Animal IDs" sap:VirtualizedContainerService.HintSize="686,588" sap2010:WorkflowViewState.IdRef="Sequence_18">
-                                    <Sequence.Variables>
-                                      <Variable x:TypeArguments="x:Int32" Name="intAnimalIDCount" />
-                                    </Sequence.Variables>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <Assign DisplayName="Assign intAnimalIDCount" sap:VirtualizedContainerService.HintSize="510,83" sap2010:WorkflowViewState.IdRef="Assign_25">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="x:Int32">[intAnimalIDCount]</OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="x:Int32">[Regex.Matches(dtFormData.Rows(0).Item("If you are reporting the vaccination of any sheep, confirm the official unique identifiers of all the sheep that you have vaccinated - Answer 1").ToString.ToLower, "uk[0-9\s]*?(?=uk|$)", RegexOptions.Multiline).Count]</InArgument>
-                                      </Assign.Value>
-                                    </Assign>
-                                    <If Condition="[intAnimalIDCount &lt;&gt; Cint(dtFormData.Rows(0).Item(&quot;Confirm the number of sheep you are reporting as vaccinated on this form.&quot;))]" DisplayName="Count Mismatch?" sap:VirtualizedContainerService.HintSize="510,354" sap2010:WorkflowViewState.IdRef="If_6">
-                                      <If.Then>
-                                        <Sequence sap:VirtualizedContainerService.HintSize="476,171" sap2010:WorkflowViewState.IdRef="Sequence_19">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <Assign DisplayName="Assign strRobotNotes" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_26">
-                                            <Assign.To>
-                                              <OutArgument x:TypeArguments="x:String">[strRobotNotes]</OutArgument>
-                                            </Assign.To>
-                                            <Assign.Value>
-                                              <InArgument x:TypeArguments="x:String">["Valid Sheep Animal ID Mismatch. Either Animal IDs are missing or they are not in the UKXXXXXXXXXXXX format. Number of IDs reported: "+dtFormData.Rows(0).Item("Confirm the number of sheep you are reporting as vaccinated on this form.").ToString+". Number detected: "+intAnimalIDCount.ToString+Environment.NewLine]</InArgument>
-                                            </Assign.Value>
-                                          </Assign>
-                                        </Sequence>
-                                      </If.Then>
-                                      <If.Else>
-                                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_20" />
-                                      </If.Else>
-                                    </If>
-                                  </Sequence>
+                                  <TryCatch DisplayName="Try Catch - Validate Number of Cattle Animal IDs" sap:VirtualizedContainerService.HintSize="686,380" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                                    <TryCatch.Try>
+                                      <Sequence DisplayName="Validate Number of Cattle Animal IDs" sap:VirtualizedContainerService.HintSize="572,588" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                        <Sequence.Variables>
+                                          <Variable x:TypeArguments="x:Int32" Name="intAnimalIDCount" />
+                                        </Sequence.Variables>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign DisplayName="Assign intAnimalIDCount" sap:VirtualizedContainerService.HintSize="510,83" sap2010:WorkflowViewState.IdRef="Assign_23">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:Int32">[intAnimalIDCount]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:Int32" xml:space="preserve">[Regex.Matches(dtFormData.Rows(0).Item("If you are reporting the vaccination of any cattle, confirm the official identifiers of all the cattle that you have vaccinated.  - Answer 1").ToString.ToLower, "uk[0-9\s]*?(?=uk|$)", RegexOptions.Multiline).Count]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <If Condition="[intAnimalIDCount &lt;&gt; Cint(dtFormData.Rows(0).Item(&quot;Confirm the number of cattle you are reporting as vaccinated on this form&quot;))]" DisplayName="Count Mismatch?" sap:VirtualizedContainerService.HintSize="510,354" sap2010:WorkflowViewState.IdRef="If_5">
+                                          <If.Then>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="476,171" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Assign DisplayName="Assign strRobotNotes" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_24">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[strRobotNotes]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">["Valid Cattle Animal ID Mismatch. Either Animal IDs are missing or they are not in the UKXXXXXXXXXXXX format. Number of IDs reported: "+dtFormData.Rows(0).Item("Confirm the number of cattle you are reporting as vaccinated on this form").ToString+". Number detected: "+intAnimalIDCount.ToString+Environment.NewLine]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                            </Sequence>
+                                          </If.Then>
+                                          <If.Else>
+                                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_17" />
+                                          </If.Else>
+                                        </If>
+                                      </Sequence>
+                                    </TryCatch.Try>
+                                    <TryCatch.Catches>
+                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,213" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ActivityAction x:TypeArguments="s:Exception">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                          </ActivityAction.Argument>
+                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Failed to Validate Number of Cattle IDs&quot;]" />
+                                        </ActivityAction>
+                                      </Catch>
+                                    </TryCatch.Catches>
+                                  </TryCatch>
+                                  <TryCatch DisplayName="Try Catch - Validate Number of Sheep Animal IDs" sap:VirtualizedContainerService.HintSize="686,380" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                                    <TryCatch.Try>
+                                      <Sequence DisplayName="Validate Number of Sheep Animal IDs" sap:VirtualizedContainerService.HintSize="572,588" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                        <Sequence.Variables>
+                                          <Variable x:TypeArguments="x:Int32" Name="intAnimalIDCount" />
+                                        </Sequence.Variables>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign DisplayName="Assign intAnimalIDCount" sap:VirtualizedContainerService.HintSize="510,83" sap2010:WorkflowViewState.IdRef="Assign_25">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:Int32">[intAnimalIDCount]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:Int32">[Regex.Matches(dtFormData.Rows(0).Item("If you are reporting the vaccination of any sheep, confirm the official unique identifiers of all the sheep that you have vaccinated - Answer 1").ToString.ToLower, "uk[0-9\s]*?(?=uk|$)", RegexOptions.Multiline).Count]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <If Condition="[intAnimalIDCount &lt;&gt; Cint(dtFormData.Rows(0).Item(&quot;Confirm the number of sheep you are reporting as vaccinated on this form.&quot;))]" DisplayName="Count Mismatch?" sap:VirtualizedContainerService.HintSize="510,354" sap2010:WorkflowViewState.IdRef="If_6">
+                                          <If.Then>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="476,171" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Assign DisplayName="Assign strRobotNotes" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_26">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[strRobotNotes]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">["Valid Sheep Animal ID Mismatch. Either Animal IDs are missing or they are not in the UKXXXXXXXXXXXX format. Number of IDs reported: "+dtFormData.Rows(0).Item("Confirm the number of sheep you are reporting as vaccinated on this form.").ToString+". Number detected: "+intAnimalIDCount.ToString+Environment.NewLine]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                            </Sequence>
+                                          </If.Then>
+                                          <If.Else>
+                                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_20" />
+                                          </If.Else>
+                                        </If>
+                                      </Sequence>
+                                    </TryCatch.Try>
+                                    <TryCatch.Catches>
+                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,213" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ActivityAction x:TypeArguments="s:Exception">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                          </ActivityAction.Argument>
+                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Failed to Validate Number of Sheep IDs&quot;]" />
+                                        </ActivityAction>
+                                      </Catch>
+                                    </TryCatch.Catches>
+                                  </TryCatch>
                                   <Assign DisplayName="Assign Robot Notes" sap:VirtualizedContainerService.HintSize="686,83" sap2010:WorkflowViewState.IdRef="Assign_29">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:Object">[dtFormData.Rows(0).Item("Robot Notes")]</OutArgument>
