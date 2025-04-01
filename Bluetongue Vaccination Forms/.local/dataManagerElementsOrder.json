@@ -18,11 +18,11 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "g_arrCaseID&Sequence_85",
-        "g_Config&Sequence_85",
-        "g_swProcessingTimer&Sequence_85",
-        "g_TransactionItem&Sequence_85",
-        "g_intExitPoint&Sequence_85",
+        "g_arrCaseID&Sequence_89",
+        "g_Config&Sequence_89",
+        "g_swProcessingTimer&Sequence_89",
+        "g_TransactionItem&Sequence_89",
+        "g_intExitPoint&Sequence_89",
         "SystemException&StateMachine_1",
         "BusinessException&StateMachine_1",
         "TransactionNumber&StateMachine_1",
@@ -111,11 +111,11 @@
       "Path": "Process/Process Transaction.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "g_arrCaseID&Sequence_85",
-        "g_Config&Sequence_85",
-        "g_swProcessingTimer&Sequence_85",
-        "g_TransactionItem&Sequence_85",
-        "g_intExitPoint&Sequence_85",
+        "g_arrCaseID&Sequence_2",
+        "g_Config&Sequence_2",
+        "g_swProcessingTimer&Sequence_2",
+        "g_TransactionItem&Sequence_2",
+        "g_intExitPoint&Sequence_2",
         "intAnimalIDCount&Sequence_18",
         "strRobotNotes&Sequence_7",
         "intAnimalIDCount&Sequence_15",
@@ -182,6 +182,27 @@
         "io_intConSysEx",
         "io_RetryNumber",
         "io_TransactionNumber"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "GlobalExceptionHandler.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&Sequence_89",
+        "g_Config&Sequence_89",
+        "g_swProcessingTimer&Sequence_89",
+        "g_TransactionItem&Sequence_89",
+        "g_intExitPoint&Sequence_89",
+        "answer&Sequence_1",
+        "retry&Sequence_1",
+        "boolRetryable&Sequence_1",
+        "dtRetryableActivities&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "errorInfo",
+        "result"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
