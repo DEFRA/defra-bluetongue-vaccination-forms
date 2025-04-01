@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2331,1666.5</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2031,1666.5</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Process_Transaction_2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -494,11 +494,12 @@
                                     <av:PointCollection x:Key="ConnectorLocation">690,1151.5 690,1192.5 380,1192.5 380,1335.5</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Sequence DisplayName="Concatenate Animal IDs &amp; Validate Data" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                <Sequence DisplayName="Concatenate Animal IDs &amp; Validate Data" sap:VirtualizedContainerService.HintSize="748,6167" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="x:Int32" Name="intCattleColumnCount" />
                                     <Variable x:TypeArguments="x:Int32" Name="intSheepColumnCount" />
                                     <Variable x:TypeArguments="x:String" Name="strRobotNotes" />
+                                    <Variable x:TypeArguments="x:String" Name="intOtherColumnCount" />
                                   </Sequence.Variables>
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -559,7 +560,7 @@
                                                 <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                               </Assign.Value>
                                             </Assign>
-                                            <Assign DisplayName="Intialise strRobotNotes" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_35">
+                                            <Assign DisplayName="Assign strRobotNotes" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_35">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:String">[strRobotNotes]</OutArgument>
                                               </Assign.To>
@@ -614,13 +615,13 @@
                                                     </sap:WorkflowViewStateService.ViewState>
                                                     <Assign DisplayName="Concatenate Animal ID Columns" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_30">
                                                       <Assign.To>
-                                                        <OutArgument x:TypeArguments="x:Object" xml:space="preserve">[dtFormData.Rows(0).Item("If you are reporting the vaccination of any cattle, confirm the official identifiers of all the cattle that you have vaccinated.  - Answer 1")]</OutArgument>
+                                                        <OutArgument x:TypeArguments="x:Object">[dtFormData.Rows(0).Item("Confirm the official unique identifiers of all the cattle that you have vaccinated - Answer 1")]</OutArgument>
                                                       </Assign.To>
                                                       <Assign.Value>
-                                                        <InArgument x:TypeArguments="x:String" xml:space="preserve">[dtFormData.Rows(0).Item("If you are reporting the vaccination of any cattle, confirm the official identifiers of all the cattle that you have vaccinated.  - Answer 1").ToString+Environment.NewLine+dtFormData.Rows(0).Item("If you are reporting the vaccination of any cattle, confirm the official identifiers of all the cattle that you have vaccinated.  - Answer "+intLoopCounter.ToString).ToString]</InArgument>
+                                                        <InArgument x:TypeArguments="x:Object">[dtFormData.Rows(0).Item("Confirm the official unique identifiers of all the cattle that you have vaccinated - Answer 1").ToString+Environment.NewLine+dtFormData.Rows(0).Item("Confirm the official unique identifiers of all the cattle that you have vaccinated - Answer "+intLoopCounter.ToString).ToString]</InArgument>
                                                       </Assign.Value>
                                                     </Assign>
-                                                    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="[&quot;If you are reporting the vaccination of any cattle, confirm the official identifiers of all the cattle that you have vaccinated.  - Answer &quot;+intLoopCounter.ToString]" DataTable="[dtFormData]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_4" />
+                                                    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="[&quot;Confirm the official unique identifiers of all the cattle that you have vaccinated - Answer &quot;+intLoopCounter.ToString]" DataTable="[dtFormData]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_4" />
                                                     <Assign DisplayName="Increment Loop Counter" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_31">
                                                       <Assign.To>
                                                         <OutArgument x:TypeArguments="x:Int32">[intLoopCounter]</OutArgument>
@@ -669,7 +670,7 @@
                                           <OutArgument x:TypeArguments="x:Int32">[intSheepColumnCount]</OutArgument>
                                         </Assign.To>
                                         <Assign.Value>
-                                          <InArgument x:TypeArguments="x:Int32">[CInt(Math.Ceiling(CType(dtFormData.Rows(0).Item("Confirm the number of sheep you are reporting as vaccinated on this form."),Double)/300))]</InArgument>
+                                          <InArgument x:TypeArguments="x:Int32">[CInt(Math.Ceiling(CType(dtFormData.Rows(0).Item("Confirm the number of sheep you are reporting as vaccinated on this form"),Double)/300))]</InArgument>
                                         </Assign.Value>
                                       </Assign>
                                     </TryCatch.Try>
@@ -700,12 +701,12 @@
                                                 <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                               </Assign.Value>
                                             </Assign>
-                                            <Assign DisplayName="Intialise strRobotNotes" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_37">
+                                            <Assign DisplayName="Assign strRobotNotes" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_37">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:String">[strRobotNotes]</OutArgument>
                                               </Assign.To>
                                               <Assign.Value>
-                                                <InArgument x:TypeArguments="x:String">["Unable to convert provided value for number of Sheeo Animal IDs to a valid number! Value provided: "+dtFormData.Rows(0).Item("Confirm the number of sheep you are reporting as vaccinated on this form.").ToString+System.Environment.NewLine]</InArgument>
+                                                <InArgument x:TypeArguments="x:String">["Unable to convert provided value for number of Sheeo Animal IDs to a valid number! Value provided: "+dtFormData.Rows(0).Item("Confirm the number of sheep you are reporting as vaccinated on this form").ToString+System.Environment.NewLine]</InArgument>
                                               </Assign.Value>
                                             </Assign>
                                           </Sequence>
@@ -755,13 +756,13 @@
                                                     </sap:WorkflowViewStateService.ViewState>
                                                     <Assign DisplayName="Concatenate Animal ID Columns" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_38">
                                                       <Assign.To>
-                                                        <OutArgument x:TypeArguments="x:Object">[dtFormData.Rows(0).Item("If you are reporting the vaccination of any sheep, confirm the official unique identifiers of all the sheep that you have vaccinated - Answer 1")]</OutArgument>
+                                                        <OutArgument x:TypeArguments="x:Object">[dtFormData.Rows(0).Item("Confirm the official unique identifiers of all the sheep that you have vaccinated - Answer 1")]</OutArgument>
                                                       </Assign.To>
                                                       <Assign.Value>
-                                                        <InArgument x:TypeArguments="x:String">[dtFormData.Rows(0).Item("If you are reporting the vaccination of any sheep, confirm the official unique identifiers of all the sheep that you have vaccinated - Answer 1").ToString+Environment.NewLine+dtFormData.Rows(0).Item("If you are reporting the vaccination of any sheep, confirm the official unique identifiers of all the sheep that you have vaccinated - Answer "+intLoopCounter.ToString).ToString]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String">[dtFormData.Rows(0).Item("Confirm the official unique identifiers of all the sheep that you have vaccinated - Answer 1").ToString+Environment.NewLine+dtFormData.Rows(0).Item("Confirm the official unique identifiers of all the sheep that you have vaccinated - Answer "+intLoopCounter.ToString).ToString]</InArgument>
                                                       </Assign.Value>
                                                     </Assign>
-                                                    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="[&quot;If you are reporting the vaccination of any sheep, confirm the official unique identifiers of all the sheep that you have vaccinated - Answer &quot;+intLoopCounter.ToString]" DataTable="[dtFormData]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_5" />
+                                                    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="[&quot;Confirm the official unique identifiers of all the sheep that you have vaccinated - Answer &quot;+intLoopCounter.ToString]" DataTable="[dtFormData]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_5" />
                                                     <Assign DisplayName="Increment Loop Counter" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_39">
                                                       <Assign.To>
                                                         <OutArgument x:TypeArguments="x:Int32">[intLoopCounter]</OutArgument>
@@ -838,7 +839,7 @@
                                       </If.Else>
                                     </If>
                                   </Sequence>
-                                  <TryCatch DisplayName="Try Catch - Validate Number of Cattle Animal IDs" sap:VirtualizedContainerService.HintSize="686,380" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                                  <TryCatch DisplayName="Try Catch - Validate Number of Cattle Animal IDs" sap:VirtualizedContainerService.HintSize="686,821" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                                     <TryCatch.Try>
                                       <Sequence DisplayName="Validate Number of Cattle Animal IDs" sap:VirtualizedContainerService.HintSize="572,588" sap2010:WorkflowViewState.IdRef="Sequence_15">
                                         <Sequence.Variables>
@@ -854,7 +855,7 @@
                                             <OutArgument x:TypeArguments="x:Int32">[intAnimalIDCount]</OutArgument>
                                           </Assign.To>
                                           <Assign.Value>
-                                            <InArgument x:TypeArguments="x:Int32" xml:space="preserve">[Regex.Matches(dtFormData.Rows(0).Item("If you are reporting the vaccination of any cattle, confirm the official identifiers of all the cattle that you have vaccinated.  - Answer 1").ToString.ToLower, "uk[0-9\s]*?(?=uk|$)", RegexOptions.Multiline).Count]</InArgument>
+                                            <InArgument x:TypeArguments="x:Int32">[Regex.Matches(dtFormData.Rows(0).Item("Confirm the official unique identifiers of all the cattle that you have vaccinated - Answer 1").ToString.ToLower, "uk[0-9\s]*?(?=uk|$)", RegexOptions.Multiline).Count]</InArgument>
                                           </Assign.Value>
                                         </Assign>
                                         <If Condition="[intAnimalIDCount &lt;&gt; Cint(dtFormData.Rows(0).Item(&quot;Confirm the number of cattle you are reporting as vaccinated on this form&quot;))]" DisplayName="Count Mismatch?" sap:VirtualizedContainerService.HintSize="510,354" sap2010:WorkflowViewState.IdRef="If_5">
@@ -882,10 +883,10 @@
                                       </Sequence>
                                     </TryCatch.Try>
                                     <TryCatch.Catches>
-                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,213" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="576,22" sap2010:WorkflowViewState.IdRef="Catch`1_5">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
@@ -914,10 +915,10 @@
                                             <OutArgument x:TypeArguments="x:Int32">[intAnimalIDCount]</OutArgument>
                                           </Assign.To>
                                           <Assign.Value>
-                                            <InArgument x:TypeArguments="x:Int32">[Regex.Matches(dtFormData.Rows(0).Item("If you are reporting the vaccination of any sheep, confirm the official unique identifiers of all the sheep that you have vaccinated - Answer 1").ToString.ToLower, "uk[0-9\s]*?(?=uk|$)", RegexOptions.Multiline).Count]</InArgument>
+                                            <InArgument x:TypeArguments="x:Int32">[Regex.Matches(dtFormData.Rows(0).Item("Confirm the official unique identifiers of all the sheep that you have vaccinated - Answer 1").ToString.ToLower, "uk[0-9\s]*?(?=uk|$)", RegexOptions.Multiline).Count]</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <If Condition="[intAnimalIDCount &lt;&gt; Cint(dtFormData.Rows(0).Item(&quot;Confirm the number of sheep you are reporting as vaccinated on this form.&quot;))]" DisplayName="Count Mismatch?" sap:VirtualizedContainerService.HintSize="510,354" sap2010:WorkflowViewState.IdRef="If_6">
+                                        <If Condition="[intAnimalIDCount &lt;&gt; Cint(dtFormData.Rows(0).Item(&quot;Confirm the number of sheep you are reporting as vaccinated on this form&quot;))]" DisplayName="Count Mismatch?" sap:VirtualizedContainerService.HintSize="510,354" sap2010:WorkflowViewState.IdRef="If_6">
                                           <If.Then>
                                             <Sequence sap:VirtualizedContainerService.HintSize="476,171" sap2010:WorkflowViewState.IdRef="Sequence_19">
                                               <sap:WorkflowViewStateService.ViewState>
@@ -930,7 +931,7 @@
                                                   <OutArgument x:TypeArguments="x:String">[strRobotNotes]</OutArgument>
                                                 </Assign.To>
                                                 <Assign.Value>
-                                                  <InArgument x:TypeArguments="x:String">["Valid Sheep Animal ID Mismatch. Either Animal IDs are missing or they are not in the UKXXXXXXXXXXXX format. Number of IDs reported: "+dtFormData.Rows(0).Item("Confirm the number of sheep you are reporting as vaccinated on this form.").ToString+". Number detected: "+intAnimalIDCount.ToString+Environment.NewLine]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String">["Valid Sheep Animal ID Mismatch. Either Animal IDs are missing or they are not in the UKXXXXXXXXXXXX format. Number of IDs reported: "+dtFormData.Rows(0).Item("Confirm the number of sheep you are reporting as vaccinated on this form").ToString+". Number detected: "+intAnimalIDCount.ToString+Environment.NewLine]</InArgument>
                                                 </Assign.Value>
                                               </Assign>
                                             </Sequence>
