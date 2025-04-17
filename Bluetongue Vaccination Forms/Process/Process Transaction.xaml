@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2031,1666.5</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2323,1666.5</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Process_Transaction_2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -53,6 +53,7 @@
       <x:String>UiPath.Excel.Activities.Business</x:String>
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
       <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Globalization</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -184,7 +185,7 @@
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">280,230.5</av:Point>
               <av:Size x:Key="ShapeSize">200,53</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">380,283.5 380,349.5</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">380,283.5 380,333.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Navigate to Download URL" sap:VirtualizedContainerService.HintSize="200,53" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="8de93bf6-1cb1-4efa-97e1-a8581c2ec7d2" Version="V2" WindowResize="Maximize">
@@ -291,9 +292,9 @@
             <FlowStep x:Name="__ReferenceID3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">280,349.5</av:Point>
+                  <av:Point x:Key="ShapeLocation">280,333.5</av:Point>
                   <av:Size x:Key="ShapeSize">200,53</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">380,402.5 380,452.5</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">380,386.5 380,452.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:ReadCsvFile DataTable="[dtFormData]" Delimitator="Comma" DisplayName="Read CSV" FilePath="[strFormCSVFilepath]" sap:VirtualizedContainerService.HintSize="200,53" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1">
@@ -362,13 +363,13 @@
                                     <ActivityAction.Argument>
                                       <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
                                     </ActivityAction.Argument>
-                                    <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File  - Master Spreadsheet" sap:VirtualizedContainerService.HintSize="468,434" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" WorkbookPath="[g_Config(&quot;MasterSpreadsheetPath&quot;).ToString]">
+                                    <ueab:ExcelApplicationCard Password="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File  - Master Spreadsheet" sap:VirtualizedContainerService.HintSize="468,434" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ReadFormatting="RawValue" ResizeWindow="None" WorkbookPath="[g_Config(&quot;MasterSpreadsheetPath&quot;).ToString]">
                                       <ueab:ExcelApplicationCard.Body>
                                         <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                                           <ActivityAction.Argument>
                                             <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                                           </ActivityAction.Argument>
-                                          <ueab:WriteRangeX Append="True" Destination="[Excel.Sheet(strSheet)]" DisplayName="Write DataTable to Excel" ExcludeHeaders="True" sap:VirtualizedContainerService.HintSize="434,161" sap2010:WorkflowViewState.IdRef="WriteRangeX_1" IgnoreEmptySource="False" Source="[dtFormData]" />
+                                          <ueab:WriteRangeX Append="True" Destination="[Excel.Sheet(strSheet)]" DisplayName="Write DataTable to Excel" ExcludeHeaders="True" sap:VirtualizedContainerService.HintSize="434,161" sap2010:WorkflowViewState.IdRef="WriteRangeX_3" IgnoreEmptySource="False" Source="[dtFormData]" />
                                         </ActivityAction>
                                       </ueab:ExcelApplicationCard.Body>
                                       <sap:WorkflowViewStateService.ViewState>
@@ -491,10 +492,10 @@
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <av:Point x:Key="ShapeLocation">590,1068.5</av:Point>
                                     <av:Size x:Key="ShapeSize">200,83</av:Size>
-                                    <av:PointCollection x:Key="ConnectorLocation">690,1151.5 690,1192.5 380,1192.5 380,1335.5</av:PointCollection>
+                                    <av:PointCollection x:Key="ConnectorLocation">690,1151.5 690,1193.5 380,1193.5 380,1335.5</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Sequence DisplayName="Concatenate Animal IDs &amp; Validate Data" sap:VirtualizedContainerService.HintSize="748,6167" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                <Sequence DisplayName="Concatenate Animal IDs &amp; Validate Data" sap:VirtualizedContainerService.HintSize="748,7380" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="x:Int32" Name="intCattleColumnCount" />
                                     <Variable x:TypeArguments="x:Int32" Name="intSheepColumnCount" />
@@ -658,14 +659,14 @@
                                       <Sequence sap2010:WorkflowViewState.IdRef="Sequence_9" />
                                     </If.Else>
                                   </If>
-                                  <TryCatch sap2010:Annotation.AnnotationText="Try Catch for same reason as Cattle" DisplayName="Try Catch - Assign Sheep Animal ID Column Count" sap:VirtualizedContainerService.HintSize="686,347" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                                  <TryCatch sap2010:Annotation.AnnotationText="Try Catch for same reason as Cattle" DisplayName="Try Catch - Assign Sheep Animal ID Column Count" sap:VirtualizedContainerService.HintSize="686,220" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <TryCatch.Try>
-                                      <Assign DisplayName="Assign Sheep Animal ID Column Count" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                      <Assign DisplayName="Assign Sheep Animal ID Column Count" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_19">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:Int32">[intSheepColumnCount]</OutArgument>
                                         </Assign.To>
@@ -675,7 +676,7 @@
                                       </Assign>
                                     </TryCatch.Try>
                                     <TryCatch.Catches>
-                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -899,7 +900,7 @@
                                       </Catch>
                                     </TryCatch.Catches>
                                   </TryCatch>
-                                  <TryCatch DisplayName="Try Catch - Validate Number of Sheep Animal IDs" sap:VirtualizedContainerService.HintSize="686,380" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                                  <TryCatch DisplayName="Try Catch - Validate Number of Sheep Animal IDs" sap:VirtualizedContainerService.HintSize="686,821" sap2010:WorkflowViewState.IdRef="TryCatch_6">
                                     <TryCatch.Try>
                                       <Sequence DisplayName="Validate Number of Sheep Animal IDs" sap:VirtualizedContainerService.HintSize="572,588" sap2010:WorkflowViewState.IdRef="Sequence_18">
                                         <Sequence.Variables>
@@ -943,10 +944,10 @@
                                       </Sequence>
                                     </TryCatch.Try>
                                     <TryCatch.Catches>
-                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,213" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="576,22" sap2010:WorkflowViewState.IdRef="Catch`1_6">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
@@ -959,6 +960,57 @@
                                       </Catch>
                                     </TryCatch.Catches>
                                   </TryCatch>
+                                  <Sequence DisplayName="Convert Date Values" sap:VirtualizedContainerService.HintSize="686,859" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If Condition="[dtFormData.Rows(0).Item(&quot;On what date did the animals reported within this form receive the first dose of the vaccine?&quot;).ToString.Trim &lt;&gt; &quot;&quot;]" DisplayName="Date Value Populated - Column V? " sap:VirtualizedContainerService.HintSize="510,354" sap2010:WorkflowViewState.IdRef="If_8">
+                                      <If.Then>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="476,171" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Assign DisplayName="Convert to UK Date Format" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_40">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:Object">[dtFormData.Rows(0).Item("On what date did the animals reported within this form receive the first dose of the vaccine?")]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[DateTime.Parse(dtFormData.Rows(0).Item("On what date did the animals reported within this form receive the first dose of the vaccine?").ToString, New System.Globalization.CultureInfo("en-GB")).ToString("yyyy-MM-dd")]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </Sequence>
+                                      </If.Then>
+                                      <If.Else>
+                                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_31" />
+                                      </If.Else>
+                                    </If>
+                                    <If Condition="[dtFormData.Rows(0).Item(&quot;When did the animals receive the second dose of the vaccine?&quot;).ToString.Trim &lt;&gt; &quot;&quot;]" DisplayName="Date Value Populated - Column X? " sap:VirtualizedContainerService.HintSize="510,354" sap2010:WorkflowViewState.IdRef="If_9">
+                                      <If.Then>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="476,171" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Assign DisplayName="Convert to UK Date Format" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_41">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:Object">[dtFormData.Rows(0).Item("When did the animals receive the second dose of the vaccine?")]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[DateTime.Parse(dtFormData.Rows(0).Item("When did the animals receive the second dose of the vaccine?").ToString, New System.Globalization.CultureInfo("en-GB")).ToString("yyyy-MM-dd")]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </Sequence>
+                                      </If.Then>
+                                      <If.Else>
+                                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_33" />
+                                      </If.Else>
+                                    </If>
+                                  </Sequence>
                                   <Assign DisplayName="Assign Robot Notes" sap:VirtualizedContainerService.HintSize="686,83" sap2010:WorkflowViewState.IdRef="Assign_29">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:Object">[dtFormData.Rows(0).Item("Robot Notes")]</OutArgument>
