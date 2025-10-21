@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gmVLlh934tG0roWQeSNZP0puAGtUthOfHqOI3Wgfa59TrKhm/ARUorrh24FeX0XP+1RVqL2rKD8o7bM5tBG+TQ==",
+  "dgSpecHash": "gTLldq+m+Z76D55SVQzHdN1Lr4VvpLh4DbpJTKo2zZqNHGrJp4hfGCo0AJUhYEfhdFaB/Gt7FOA0cJXbg2NU4A==",
   "success": true,
   "projectFilePath": "C:\\Users\\ws000012\\OneDrive - Defra\\UiPath\\Github\\defra-bluetongue-vaccination-forms\\Bluetongue Vaccination Forms\\.local\\",
   "expectedPackageFiles": [
@@ -161,8 +161,6 @@
     "C:\\Users\\ws000012\\.nuget\\packages\\runtime.win.system.net.primitives\\4.3.0\\runtime.win.system.net.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\ws000012\\.nuget\\packages\\runtime.win.system.net.sockets\\4.3.0\\runtime.win.system.net.sockets.4.3.0.nupkg.sha512",
     "C:\\Users\\ws000012\\.nuget\\packages\\runtime.win.system.runtime.extensions\\4.3.0\\runtime.win.system.runtime.extensions.4.3.0.nupkg.sha512",
-    "C:\\Users\\ws000012\\.nuget\\packages\\runtime.win7-x64.runtime.native.system.io.compression\\4.3.0\\runtime.win7-x64.runtime.native.system.io.compression.4.3.0.nupkg.sha512",
-    "C:\\Users\\ws000012\\.nuget\\packages\\runtime.win7.system.private.uri\\4.3.0\\runtime.win7.system.private.uri.4.3.0.nupkg.sha512",
     "C:\\Users\\ws000012\\.nuget\\packages\\sharpziplib\\1.3.3\\sharpziplib.1.3.3.nupkg.sha512",
     "C:\\Users\\ws000012\\.nuget\\packages\\system.activities.viewmodels\\1.0.0-20240418.6\\system.activities.viewmodels.1.0.0-20240418.6.nupkg.sha512",
     "C:\\Users\\ws000012\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
@@ -324,8 +322,8 @@
       "message": "Detected package version outside of dependency constraint: DRACOE.Logging.64 1.0.9 requires UiPath.System.Activities (= 23.10.6) but version UiPath.System.Activities 24.10.4 was resolved.",
       "libraryId": "UiPath.System.Activities",
       "targetGraphs": [
-        "net6.0-windows7.0",
-        "net6.0-windows7.0/win10-x64"
+        "net8.0-windows7.0",
+        "net8.0-windows7.0/win-x64"
       ]
     }
   ]
