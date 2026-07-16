@@ -20,17 +20,19 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: Install UiPath CLI
         run: npm install -g @uipath/cli
+
+
 
       - name: Log in to Orchestrator
         env:
           UIPATH_CLIENT_ID:     ${{ secrets.UIPATH_DEV_CLIENT_ID }}
           UIPATH_CLIENT_SECRET: ${{ secrets.UIPATH_DEV_CLIENT_SECRET }}
         run: |
-          uip login --organization DRACOE --client-id "$UIPATH_CLIENT_ID" --client-secret "$UIPATH_CLIENT_SECRET" --tenant "${{ vars.UIPATH_DEV_TENANT }}"
+          uip login --no-browser --client-id "$UIPATH_CLIENT_ID" --client-secret "$UIPATH_CLIENT_SECRET" --organization DRACOE --tenant "${{ vars.UIPATH_DEV_TENANT }}"
             
       - name: Pack project into .nupkg
         id: pack
@@ -39,7 +41,6 @@ jobs:
           uip rpa pack "$SOLUTION_DIR" "$OUTPUT_DIR"
           echo "artifact=$(find "$OUTPUT_DIR" -maxdepth 1 -name '*.nupkg' -o -name '*.zip' | head -1)" >> "$GITHUB_OUTPUT"
 
-      
 
     #  - name: Publish package
     #    run: uip solution publish "${{ steps.pack.outputs.artifact }}"
