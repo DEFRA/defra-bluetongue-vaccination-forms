@@ -14,7 +14,7 @@ env:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -25,15 +25,6 @@ jobs:
       - name: Install UiPath CLI
         run: npm install -g @uipath/cli
 
-# "$SOLUTION_DIR" --output "$OUTPUT_DIR" --auto-version --output-type "Process"
-
-      - name: Pack project into .nupkg
-        id: pack
-        run: |
-          mkdir -p "$OUTPUT_DIR"
-          uip rpa pack "$SOLUTION_DIR" "$OUTPUT_DIR"
-          echo "artifact=$(find "$OUTPUT_DIR" -maxdepth 1 -name '*.nupkg' -o -name '*.zip' | head -1)" >> "$GITHUB_OUTPUT"
-
       - name: Log in to Orchestrator
         env:
           UIPATH_CLIENT_ID:     ${{ secrets.UIPATH_DEV_CLIENT_ID }}
@@ -43,6 +34,15 @@ jobs:
             --client-id "$UIPATH_CLIENT_ID" \
             --client-secret "$UIPATH_CLIENT_SECRET" \
             --tenant "${{ vars.UIPATH_DEV_TENANT }}"
+            
+      - name: Pack project into .nupkg
+        id: pack
+        run: |
+          mkdir -p "$OUTPUT_DIR"
+          uip rpa pack "$SOLUTION_DIR" "$OUTPUT_DIR"
+          echo "artifact=$(find "$OUTPUT_DIR" -maxdepth 1 -name '*.nupkg' -o -name '*.zip' | head -1)" >> "$GITHUB_OUTPUT"
+
+      
 
     #  - name: Publish package
     #    run: uip solution publish "${{ steps.pack.outputs.artifact }}"
