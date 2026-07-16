@@ -1,0 +1,57 @@
+name: Deploy to Development
+
+# Only runs when someone manually clicks "Run workflow" in the Actions tab —
+# no automatic trigger on push.
+on:
+  workflow_dispatch:
+
+env:
+  SOLUTION_NAME: 'Annex-VII-Test'   # change to your project name
+  SOLUTION_DIR:  './Code/'            # path to the folder containing project.json
+  OUTPUT_DIR:    './Packages'
+  FOLDER_NAME:   'Annex VII CD Test'    # Orchestrator folder to deploy into
+  FOLDER_PATH:   'Internal'        # parent path of that folder
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install UiPath CLI
+        run: npm install -g @uipath/cli
+
+      - name: Pack project into .nupkg
+        id: pack
+        run: |
+          mkdir -p "$OUTPUT_DIR"
+          uip solution pack "$SOLUTION_DIR" "$OUTPUT_DIR" \
+            --name "$SOLUTION_NAME" \
+            --version "1.0.0-${{ github.run_number }}"
+          echo "artifact=$(find "$OUTPUT_DIR" -maxdepth 1 -name '*.nupkg' -o -name '*.zip' | head -1)" >> "$GITHUB_OUTPUT"
+
+      - name: Log in to Orchestrator
+        env:
+          UIPATH_CLIENT_ID:     ${{ secrets.UIPATH_DEV_CLIENT_ID }}
+          UIPATH_CLIENT_SECRET: ${{ secrets.UIPATH_DEV_CLIENT_SECRET }}
+        run: |
+          uip login \
+            --client-id "$UIPATH_CLIENT_ID" \
+            --client-secret "$UIPATH_CLIENT_SECRET" \
+            --tenant "${{ vars.UIPATH_DEV_TENANT }}"
+
+      - name: Publish package
+        run: uip solution publish "${{ steps.pack.outputs.artifact }}"
+
+      - name: Deploy to folder
+        run: |
+          uip solution deploy run \
+            --name "${SOLUTION_NAME}-dev-${{ github.run_number }}" \
+            --package-name "$SOLUTION_NAME" \
+            --package-version "1.0.0-${{ github.run_number }}" \
+            --folder-name "$FOLDER_NAME" \
+            --folder-path "$FOLDER_PATH"
