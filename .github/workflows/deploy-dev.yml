@@ -25,12 +25,14 @@ jobs:
       - name: Install UiPath CLI
         run: npm install -g @uipath/cli
 
+# "$SOLUTION_DIR" --output "$OUTPUT_DIR" --auto-version --output-type "Process"
+
       - name: Pack project into .nupkg
         id: pack
         run: |
           mkdir -p "$OUTPUT_DIR"
           echo "ls" >> "$GITHUB_OUTPUT"
-          uip rpa pack "$SOLUTION_DIR" --output "$OUTPUT_DIR" --auto-version --output-type "Process"
+          uip rpa pack --help
           echo "artifact=$(find "$OUTPUT_DIR" -maxdepth 1 -name '*.nupkg' -o -name '*.zip' | head -1)" >> "$GITHUB_OUTPUT"
 
       - name: Log in to Orchestrator
