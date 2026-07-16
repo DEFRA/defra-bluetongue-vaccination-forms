@@ -31,7 +31,7 @@ jobs:
           UIPATH_CLIENT_ID:     ${{ secrets.UIPATH_CLIENT_ID }}
           UIPATH_CLIENT_SECRET: ${{ secrets.UIPATH_CLIENT_SECRET }}
         run: |
-          uip login --client-id "$UIPATH_CLIENT_ID" --client-secret "$UIPATH_CLIENT_SECRET" --tenant "${{ vars.UIPATH_DEV_TENANT }}"
+          uip login --client-id env.UIPATH_CLIENT_ID --client-secret env.UIPATH_CLIENT_SECRET --tenant "${{ vars.UIPATH_DEV_TENANT }}"
             
    #   - name: Pack project into .nupkg
    #     id: pack
