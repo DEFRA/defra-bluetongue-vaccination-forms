@@ -7,7 +7,7 @@ on:
 
 env:
   SOLUTION_NAME: 'Annex-VII-Test'   # change to your project name
-  SOLUTION_DIR:  './Code/'            # path to the folder containing project.json
+  SOLUTION_DIR:  './Bluetongue Vaccination Forms/'            # path to the folder containing project.json
   OUTPUT_DIR:    './Packages'
   FOLDER_NAME:   'Annex VII CD Test'    # Orchestrator folder to deploy into
   FOLDER_PATH:   'Internal'        # parent path of that folder
