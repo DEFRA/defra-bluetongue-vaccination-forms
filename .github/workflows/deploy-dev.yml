@@ -28,10 +28,10 @@ jobs:
 
       - name: Log in to Orchestrator
         env:
-          UIPATH_CLIENT_ID:     ${{ secrets.UIPATH_DEV_CLIENT_ID }}
-          UIPATH_CLIENT_SECRET: ${{ secrets.UIPATH_DEV_CLIENT_SECRET }}
+          UIPATH_CLIENT_ID:     ${{ secrets.UIPATH_CLIENT_ID }}
+          UIPATH_CLIENT_SECRET: ${{ secrets.UIPATH_CLIENT_SECRET }}
         run: |
-          uip login --no-browser --client-id "$UIPATH_CLIENT_ID" --client-secret "$UIPATH_CLIENT_SECRET" --organization DRACOE --tenant "${{ vars.UIPATH_DEV_TENANT }}"
+          uip login --client-id "$UIPATH_CLIENT_ID" --client-secret "$UIPATH_CLIENT_SECRET" --tenant "${{ vars.UIPATH_DEV_TENANT }}"
             
    #   - name: Pack project into .nupkg
    #     id: pack
