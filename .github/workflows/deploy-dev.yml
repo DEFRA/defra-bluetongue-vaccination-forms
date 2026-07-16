@@ -6,10 +6,10 @@ on:
   workflow_dispatch:
 
 env:
-  SOLUTION_NAME: 'Annex-VII-Test'   # change to your project name
+  SOLUTION_NAME: 'Bluetongue Vaccination Forms'   # change to your project name
   SOLUTION_DIR:  './Bluetongue Vaccination Forms/'            # path to the folder containing project.json
   OUTPUT_DIR:    './Packages'
-  FOLDER_NAME:   'Annex VII CD Test'    # Orchestrator folder to deploy into
+  FOLDER_NAME:   'Bluetongue CD Test'    # Orchestrator folder to deploy into
   FOLDER_PATH:   'Internal'        # parent path of that folder
 
 jobs:
@@ -30,9 +30,7 @@ jobs:
         run: |
           mkdir -p "$OUTPUT_DIR"
           echo "ls" >> "$GITHUB_OUTPUT"
-          uip rpa pack "$SOLUTION_DIR" "$OUTPUT_DIR" \
-            --version "1.0.0-${{ github.run_number }}"
-            --output-type "Process"
+          uip rpa pack "$SOLUTION_DIR" --output "$OUTPUT_DIR" --auto-version --output-type "Process"
           echo "artifact=$(find "$OUTPUT_DIR" -maxdepth 1 -name '*.nupkg' -o -name '*.zip' | head -1)" >> "$GITHUB_OUTPUT"
 
       - name: Log in to Orchestrator
