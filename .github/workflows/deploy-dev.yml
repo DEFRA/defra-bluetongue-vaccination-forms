@@ -33,12 +33,12 @@ jobs:
         run: |
           uip login --client-id env.UIPATH_CLIENT_ID --client-secret env.UIPATH_CLIENT_SECRET --tenant "${{ vars.UIPATH_DEV_TENANT }}"
             
-   #   - name: Pack project into .nupkg
-   #     id: pack
-   #     run: |
-   #       mkdir -p "$OUTPUT_DIR"
-   #       uip rpa pack "$SOLUTION_DIR" "$OUTPUT_DIR"
-   #       echo "artifact=$(find "$OUTPUT_DIR" -maxdepth 1 -name '*.nupkg' -o -name '*.zip' | head -1)" >> "$GITHUB_OUTPUT"
+      - name: Pack project into .nupkg
+        id: pack
+        run: |
+          mkdir -p "$OUTPUT_DIR"
+          uip rpa pack "$SOLUTION_DIR" "$OUTPUT_DIR"
+          echo "artifact=$(find "$OUTPUT_DIR" -maxdepth 1 -name '*.nupkg' -o -name '*.zip' | head -1)" >> "$GITHUB_OUTPUT"
 
 
     #  - name: Publish package
