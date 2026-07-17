@@ -32,6 +32,10 @@ jobs:
           UIPATH_CLIENT_SECRET: ${{ secrets.UIPATH_CLIENT_SECRET }}
         run: |
           uip login --client-id env.UIPATH_CLIENT_ID --client-secret env.UIPATH_CLIENT_SECRET --tenant "${{ vars.UIPATH_DEV_TENANT }}"
+
+      - name: Restore Project Dependencies
+        run: |
+          uip rpa restore $env:SOLUTION_DIR 
             
       - name: Pack project into .nupkg
         id: pack
