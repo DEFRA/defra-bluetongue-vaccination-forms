@@ -36,9 +36,9 @@ jobs:
       - name: Pack project into .nupkg
         id: pack
         run: |
-          mkdir -p "$OUTPUT_DIR"
-          uip rpa pack "$SOLUTION_DIR" "$OUTPUT_DIR"
-          echo "artifact=$(find "$OUTPUT_DIR" -maxdepth 1 -name '*.nupkg' -o -name '*.zip' | head -1)" >> "$GITHUB_OUTPUT"
+          mkdir -p env.OUTPUT_DIR
+          uip rpa pack env.SOLUTION_DIR env.OUTPUT_DIR
+          echo "artifact=$(find env.OUTPUT_DIR -maxdepth 1 -name '*.nupkg' -o -name '*.zip' | head -1)" >> "$GITHUB_OUTPUT"
 
 
     #  - name: Publish package
