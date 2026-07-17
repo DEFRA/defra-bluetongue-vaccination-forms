@@ -18,6 +18,11 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "g_arrCaseID&dd1a1090-f08c-4067-ae47-8e140564b33c",
+        "g_Config&dd1a1090-f08c-4067-ae47-8e140564b33c",
+        "g_swProcessingTimer&dd1a1090-f08c-4067-ae47-8e140564b33c",
+        "g_TransactionItem&dd1a1090-f08c-4067-ae47-8e140564b33c",
+        "g_intExitPoint&dd1a1090-f08c-4067-ae47-8e140564b33c",
         "SystemException&StateMachine_1",
         "BusinessException&StateMachine_1",
         "TransactionNumber&StateMachine_1",
@@ -38,16 +43,7 @@
         "boolFolderExists&Sequence_42",
         "boolShouldStop&Sequence_25",
         "dateCaseStartTime&State_3",
-        "strCaseIDText&Sequence_28",
-        "strLogNote&Flowchart_2",
-        "QueueRetry&Sequence_17",
-        "ScreenshotPath&Sequence_17",
-        "strLogNote&Sequence_31",
-        "g_arrCaseID&80fd138e-6e98-4f64-8ce3-352607d0e4cc",
-        "g_Config&80fd138e-6e98-4f64-8ce3-352607d0e4cc",
-        "g_swProcessingTimer&80fd138e-6e98-4f64-8ce3-352607d0e4cc",
-        "g_TransactionItem&80fd138e-6e98-4f64-8ce3-352607d0e4cc",
-        "g_intExitPoint&80fd138e-6e98-4f64-8ce3-352607d0e4cc"
+        "strCaseIDText&Sequence_28"
       ],
       "ArgumentsSectionElementsOrder": [
         "in_boolUnattended"
@@ -144,11 +140,11 @@
       "Path": "Framework/InitAllSettings.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "g_arrCaseID&Sequence_83",
-        "g_Config&Sequence_83",
-        "g_swProcessingTimer&Sequence_83",
-        "g_TransactionItem&Sequence_83",
-        "g_intExitPoint&Sequence_83",
+        "g_arrCaseID&dd1a1090-f08c-4067-ae47-8e140564b33c",
+        "g_Config&dd1a1090-f08c-4067-ae47-8e140564b33c",
+        "g_swProcessingTimer&dd1a1090-f08c-4067-ae47-8e140564b33c",
+        "g_TransactionItem&dd1a1090-f08c-4067-ae47-8e140564b33c",
+        "g_intExitPoint&dd1a1090-f08c-4067-ae47-8e140564b33c",
         "strJson&Sequence_2",
         "intStatusCode&Sequence_2",
         "objJson&Sequence_2",

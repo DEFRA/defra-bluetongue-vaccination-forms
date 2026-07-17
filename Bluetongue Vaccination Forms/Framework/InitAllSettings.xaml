@@ -114,7 +114,7 @@
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow retrieves all the assets from each folder listed in the in_OrchestratorFolders array. Credentials can also be retrieved if desired" DisplayName="InitAllSettingsAPI" sap:VirtualizedContainerService.HintSize="1556.8,2659.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow retrieves all the assets from each folder listed in the in_OrchestratorFolders array. Credentials can also be retrieved if desired" DisplayName="InitAllSettingsAPI" sap:VirtualizedContainerService.HintSize="2348,2382" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strJson" />
       <Variable x:TypeArguments="x:Int32" Name="intStatusCode" />
@@ -128,7 +128,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Initialise Dictionaries" sap:VirtualizedContainerService.HintSize="1494.8,148.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Initialise Dictionaries" sap:VirtualizedContainerService.HintSize="702,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -150,13 +150,13 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Orchestrator Folder" sap:VirtualizedContainerService.HintSize="1494.8,2328.4" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[in_OrchestratorFolders.Split(&quot;,&quot;c)]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Orchestrator Folder" sap:VirtualizedContainerService.HintSize="702,2148" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[in_OrchestratorFolders.Split(&quot;,&quot;c)]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="folder" />
           </ActivityAction.Argument>
-          <Sequence sap2010:Annotation.AnnotationText="Read settings and constants from the configuration file and add them to the Config dictionary." DisplayName="Get local settings and constants" sap:VirtualizedContainerService.HintSize="1460.8,2191.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence sap2010:Annotation.AnnotationText="Read settings and constants from the configuration file and add them to the Config dictionary." DisplayName="Get local settings and constants" sap:VirtualizedContainerService.HintSize="668,2010" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <Sequence.Variables>
               <Variable x:TypeArguments="njl:JArray" Name="arrJson" />
             </Sequence.Variables>
@@ -167,7 +167,7 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Trim folder name" sap:VirtualizedContainerService.HintSize="1418.8,82.4" sap2010:WorkflowViewState.IdRef="Assign_24">
+            <Assign DisplayName="Trim folder name" sap:VirtualizedContainerService.HintSize="634,115" sap2010:WorkflowViewState.IdRef="Assign_24">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[folder]</OutArgument>
               </Assign.To>
@@ -175,16 +175,16 @@
                 <InArgument x:TypeArguments="x:String">[folder.Trim]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1418.8,143.6" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Retrieving assets from: &quot;+folder]" />
-            <ui:OrchestratorHttpRequest JSONPayload="{x:Null}" ResponseHeaders="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="/swagger/index.html#/Assets/Assets_GetFiltered" DisplayName="Orchestrator HTTP Request" FolderPath="[folder]" sap:VirtualizedContainerService.HintSize="1418.8,278.4" sap2010:WorkflowViewState.IdRef="OrchestratorHttpRequest_1" Method="GET" RelativeEndpoint="/odata/Assets/UiPath.Server.Configuration.OData.GetFiltered" Result="[strJson]" StatusCode="[intStatusCode]">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="634,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Retrieving assets from: &quot;+folder]" />
+            <ui:OrchestratorHttpRequest JSONPayload="{x:Null}" ResponseHeaders="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="/swagger/index.html#/Assets/Assets_GetFiltered" DisplayName="Orchestrator HTTP Request" FolderPath="[folder]" sap:VirtualizedContainerService.HintSize="634,309" sap2010:WorkflowViewState.IdRef="OrchestratorHttpRequest_1" Method="GET" RelativeEndpoint="/odata/Assets/UiPath.Server.Configuration.OData.GetFiltered" Result="[strJson]" StatusCode="[intStatusCode]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:OrchestratorHttpRequest>
-            <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" DisplayName="Deserialize JSON Response" sap:VirtualizedContainerService.HintSize="1418.8,91.2" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[objJson]" JsonString="[strJson]" />
-            <If Condition="[intStatusCode &lt;&gt; 200]" DisplayName="If the API call failed" sap:VirtualizedContainerService.HintSize="1418.8,53.2" sap2010:WorkflowViewState.IdRef="If_6">
+            <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" DisplayName="Deserialize JSON Response" sap:VirtualizedContainerService.HintSize="634,123" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[objJson]" JsonString="[strJson]" />
+            <If Condition="[intStatusCode &lt;&gt; 200]" DisplayName="If the API call failed" sap:VirtualizedContainerService.HintSize="634,57" sap2010:WorkflowViewState.IdRef="If_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -219,7 +219,7 @@
                 <Sequence sap2010:WorkflowViewState.IdRef="Sequence_14" />
               </If.Else>
             </If>
-            <ui:DeserializeJsonArray sap2010:Annotation.AnnotationText="The &quot;value&quot; propery of the JSON response is an array of assets, so get these assets as a JArray" DisplayName="Deserialize JSON Array" sap:VirtualizedContainerService.HintSize="1418.8,104.8" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[arrJson]" JsonString="[objJson(&quot;value&quot;).ToString]">
+            <ui:DeserializeJsonArray sap2010:Annotation.AnnotationText="The &quot;value&quot; propery of the JSON response is an array of assets, so get these assets as a JArray" DisplayName="Deserialize JSON Array" sap:VirtualizedContainerService.HintSize="634,136" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[arrJson]" JsonString="[objJson(&quot;value&quot;).ToString]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -228,13 +228,13 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:DeserializeJsonArray>
-            <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For Each asset in JArray" sap:VirtualizedContainerService.HintSize="1418.8,925.6" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[arrJson]">
+            <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For Each asset in JArray" sap:VirtualizedContainerService.HintSize="634,838" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[arrJson]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="njl:JObject">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="njl:JObject" Name="asset" />
                   </ActivityAction.Argument>
-                  <Flowchart sap2010:Annotation.AnnotationText="If the asset is not credential, then store it as GenericValue in config dictionary&#xA;If the asset is credential, then store in credential dictionary, unless in_GrabCredentials is set to False" DisplayName="Store in dictionary" sap:VirtualizedContainerService.HintSize="1384.8,788.4" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+                  <Flowchart sap2010:Annotation.AnnotationText="If the asset is not credential, then store it as GenericValue in config dictionary&#xA;If the asset is credential, then store in credential dictionary, unless in_GrabCredentials is set to False" DisplayName="Store in dictionary" sap:VirtualizedContainerService.HintSize="2365,1426.04" sap2010:WorkflowViewState.IdRef="Flowchart_1">
                     <Flowchart.Variables>
                       <Variable x:TypeArguments="ss:SecureString" Name="strPass" />
                       <Variable x:TypeArguments="x:String" Name="strAsset" />
@@ -244,35 +244,35 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         <av:Point x:Key="ShapeLocation">420,12.5</av:Point>
-                        <av:Size x:Key="ShapeSize">60,75.2</av:Size>
+                        <av:Size x:Key="ShapeSize">50,50</av:Size>
                         <x:Double x:Key="Width">1350.8</x:Double>
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                         <x:Double x:Key="Height">706.8</x:Double>
-                        <av:PointCollection x:Key="ConnectorLocation">450,87.5 450,146.5</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">445,62.5 445,92.5 422,92.5 422,146.5</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <Flowchart.StartNode>
-                      <x:Reference>__ReferenceID8</x:Reference>
+                      <x:Reference>__ReferenceID7</x:Reference>
                     </Flowchart.StartNode>
-                    <FlowDecision x:Name="__ReferenceID8" Condition="[asset(&quot;ValueType&quot;).ToString.Equals(&quot;Credential&quot;)]" DisplayName="Is Asset a Credential?" sap:VirtualizedContainerService.HintSize="117.6,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+                    <FlowDecision x:Name="__ReferenceID7" Condition="[asset(&quot;ValueType&quot;).ToString.Equals(&quot;Credential&quot;)]" DisplayName="Is Asset a Credential?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <av:Point x:Key="ShapeLocation">392,146.5</av:Point>
-                          <av:Size x:Key="ShapeSize">117.6,87.2</av:Size>
-                          <av:PointCollection x:Key="FalseConnector">509.6,190.1 880.1,190.1 880.1,236.5</av:PointCollection>
-                          <av:PointCollection x:Key="TrueConnector">392,190 250,190 250,356.5</av:PointCollection>
+                          <av:Size x:Key="ShapeSize">60,60</av:Size>
+                          <av:PointCollection x:Key="FalseConnector">452,176.5 482,176.5 482,266.5 834.5,266.5</av:PointCollection>
+                          <av:PointCollection x:Key="TrueConnector">392,176.5 222.5,176.5 222.5,356.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <FlowDecision.True>
-                        <FlowDecision x:Name="__ReferenceID0" Condition="[in_RetrieveCredentials]" DisplayName="Retrieve Credentials?" sap:VirtualizedContainerService.HintSize="116,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                        <FlowDecision x:Name="__ReferenceID0" Condition="[in_RetrieveCredentials]" DisplayName="Retrieve Credentials?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <av:Point x:Key="ShapeLocation">192.5,356.5</av:Point>
-                              <av:Size x:Key="ShapeSize">116,87.2</av:Size>
-                              <av:PointCollection x:Key="TrueConnector">192.5,400 130,400 130,504.5</av:PointCollection>
-                              <av:PointCollection x:Key="FalseConnector">308.5,400.1 338.5,400.1 338.5,400 360,400</av:PointCollection>
+                              <av:Size x:Key="ShapeSize">60,60</av:Size>
+                              <av:PointCollection x:Key="TrueConnector">192.5,386.5 85,386.5 85,504.5</av:PointCollection>
+                              <av:PointCollection x:Key="FalseConnector">252.5,386.5 282.5,386.5 282.5,318.59999999999997 360,318.59999999999997</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <FlowDecision.True>
@@ -280,29 +280,10 @@
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">30,504.5</av:Point>
-                                  <av:Size x:Key="ShapeSize">200,53.2</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">230,531.1 263,531.1 263,608.8</av:PointCollection>
+                                  <av:Size x:Key="ShapeSize">110,70</av:Size>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[asset(&quot;Name&quot;).ToString]" CacheStrategy="None" DisplayName="Retrieve Credential" FolderPath="[folder]" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[strPass]" Username="[strUser]" />
-                              <FlowStep.Next>
-                                <FlowStep x:Name="__ReferenceID4" sap2010:WorkflowViewState.IdRef="FlowStep_2">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">163,608.8</av:Point>
-                                      <av:Size x:Key="ShapeSize">200,53.2</av:Size>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <Assign DisplayName="Add Credential key/value pair" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="Assign_26">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="sma:PSCredential">[out_Credentials(asset("Name").ToString)]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="sma:PSCredential">[new PSCredential(strUser, strPass)]</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
-                                </FlowStep>
-                              </FlowStep.Next>
+                              <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[asset(&quot;Name&quot;).ToString]" CacheStrategy="None" DisplayName="Retrieve Credential" FolderPath="[folder]" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[strPass]" Username="[strUser]" />
                             </FlowStep>
                           </FlowDecision.True>
                           <FlowDecision.False>
@@ -310,11 +291,11 @@
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">360,283.59999999999997</av:Point>
-                                  <av:Size x:Key="ShapeSize">200,232.8</av:Size>
+                                  <av:Size x:Key="ShapeSize">110,70</av:Size>
                                   <av:PointCollection x:Key="ConnectorLocation">420,526.666666666667 420,576.666666666667</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:Comment sap:VirtualizedContainerService.HintSize="200,232.8" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// If in_RetrieveCredentials is False, then this workflow will not retrieve credentials. Instead, use Get Credential activities wherever you need them in your automation">
+                              <ui:Comment sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// If in_RetrieveCredentials is False, then this workflow will not retrieve credentials. Instead, use Get Credential activities wherever you need them in your automation">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -326,26 +307,26 @@
                         </FlowDecision>
                       </FlowDecision.True>
                       <FlowDecision.False>
-                        <FlowDecision x:Name="__ReferenceID5" Condition="[asset(&quot;ValueScope&quot;).ToString.Equals(&quot;PerRobot&quot;)]" DisplayName="Value PerRobot?" sap:VirtualizedContainerService.HintSize="92.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                        <FlowDecision x:Name="__ReferenceID4" Condition="[asset(&quot;ValueScope&quot;).ToString.Equals(&quot;PerRobot&quot;)]" DisplayName="Value PerRobot?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <av:Point x:Key="ShapeLocation">834.5,236.5</av:Point>
-                              <av:Size x:Key="ShapeSize">92.4,87.2</av:Size>
-                              <av:PointCollection x:Key="FalseConnector">926.9,280.1 999,280.1 999,360</av:PointCollection>
-                              <av:PointCollection x:Key="TrueConnector">834.5,280.1 760,280.1 760,374.02</av:PointCollection>
+                              <av:Size x:Key="ShapeSize">60,60</av:Size>
+                              <av:PointCollection x:Key="FalseConnector">894.5,266.5 954,266.5 954,360</av:PointCollection>
+                              <av:PointCollection x:Key="TrueConnector">834.5,266.5 715,266.5 715,374.02</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <FlowDecision.True>
-                            <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_4">
+                            <FlowStep x:Name="__ReferenceID5" sap2010:WorkflowViewState.IdRef="FlowStep_4">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">660,374.02</av:Point>
-                                  <av:Size x:Key="ShapeSize">200,53.2</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">860,400.62 890,400.62 890,515.4 903.0000000000001,515.4</av:PointCollection>
+                                  <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">770,409.02 800,409.02 800,523.8 903.0000000000001,523.8</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[asset(&quot;Name&quot;).ToString]" CacheStrategy="None" DisplayName="Get Asset" FolderPath="[folder]" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="GetRobotAsset_6">
+                              <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[asset(&quot;Name&quot;).ToString]" CacheStrategy="None" DisplayName="Get Asset" FolderPath="[folder]" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="GetRobotAsset_6">
                                 <ui:GetRobotAsset.Value>
                                   <OutArgument x:TypeArguments="x:String">[strAsset]</OutArgument>
                                 </ui:GetRobotAsset.Value>
@@ -356,14 +337,14 @@
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:GetRobotAsset>
                               <FlowStep.Next>
-                                <FlowStep x:Name="__ReferenceID7" sap2010:WorkflowViewState.IdRef="FlowStep_5">
+                                <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_5">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <av:Point x:Key="ShapeLocation">903.0000000000001,488.8</av:Point>
-                                      <av:Size x:Key="ShapeSize">200,53.2</av:Size>
+                                      <av:Size x:Key="ShapeSize">110,70</av:Size>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Assign DisplayName="Add Config key/value pair" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="Assign_27">
+                                  <Assign DisplayName="Add Config key/value pair" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Assign_27">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:Object">[g_Config(asset("Name").ToString)]</OutArgument>
                                     </Assign.To>
@@ -380,10 +361,10 @@
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">899,360</av:Point>
-                                  <av:Size x:Key="ShapeSize">200,53.2</av:Size>
+                                  <av:Size x:Key="ShapeSize">110,70</av:Size>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Assign DisplayName="Add Config key/value pair" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="Assign_28">
+                              <Assign DisplayName="Add Config key/value pair" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Assign_28">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Object">[g_Config(asset("Name").ToString)]</OutArgument>
                                 </Assign.To>
@@ -403,7 +384,6 @@
                     <x:Reference>__ReferenceID4</x:Reference>
                     <x:Reference>__ReferenceID5</x:Reference>
                     <x:Reference>__ReferenceID6</x:Reference>
-                    <x:Reference>__ReferenceID7</x:Reference>
                   </Flowchart>
                 </ActivityAction>
               </ui:ForEach.Body>
@@ -414,7 +394,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEach>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1418.8,143.6" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Finished retrieving assets from: &quot;+folder]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="634,166" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Finished retrieving assets from: &quot;+folder]" />
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
